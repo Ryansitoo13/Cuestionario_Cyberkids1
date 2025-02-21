@@ -2,12 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Cuestionario CyberKids - Estilo Colorido</title>
+  <title>Cuestionario CyberKids - Estilo Pastel Infantil</title>
   <style>
     /* ======= Estilos Generales ======= */
     body {
-      font-family: 'Comic Sans MS', cursive, sans-serif; /* Letra divertida */
-      background: linear-gradient(135deg, #FFD1DC 0%, #B2E2F2 100%);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      /* Cambiamos el fondo a un degradado con tonos pastel */
+      background: linear-gradient(135deg, #A0E7E5 0%, #FFCFDF 100%);
       margin: 0;
       padding: 0;
       text-align: center;
@@ -26,7 +27,7 @@
     h1 {
       margin-bottom: 10px;
       font-size: 26px;
-      color: #FF1493; /* Color rosa fuerte */
+      color: #F57C00; /* Naranja infantil */
       text-align: center;
       text-shadow: 1px 1px 2px #fff;
     }
@@ -39,8 +40,8 @@
 
     /* ======= Estilos para las preguntas ======= */
     .question {
-      background-color: #FAF9D2;
-      border: 3px dotted #FFD700;
+      background-color: #FFF9C4; /* Amarillo pastel claro */
+      border: 3px dashed #FFB74D; /* Borde naranja pastel */
       margin-bottom: 20px;
       padding: 15px;
       border-radius: 10px;
@@ -49,7 +50,7 @@
     .question h3 {
       margin-bottom: 10px;
       font-size: 20px;
-      color: #0066CC;
+      color: #388E3C; /* Verde para destacar el título */
     }
 
     .options {
@@ -70,7 +71,7 @@
 
     /* ======= Botón Verificar ======= */
     #verify-btn {
-      background-color: #FF69B4;
+      background-color: #F06292; /* Rosa fuerte pastel */
       border: none;
       color: #fff;
       padding: 12px 25px;
@@ -83,7 +84,7 @@
     }
 
     #verify-btn:hover {
-      background-color: #FF1493;
+      background-color: #EC407A; 
     }
 
     /* ======= Puntuación y Mensajes ======= */
@@ -100,7 +101,7 @@
       font-size: 20px;
       font-weight: bold;
       text-align: center;
-      color: #FF4500;
+      color: #D32F2F;
       text-shadow: 1px 1px 2px #fff;
     }
 
@@ -171,7 +172,7 @@
       <div class="options">
         <label><input type="radio" name="q5" value="1"> Usar letras, números y símbolos</label>
         <label><input type="radio" name="q5" value="2"> Nombre de mascota y fecha de nacimiento</label>
-        <label><input type="radio" name="q5" value="3"> Usar la misma contraseña en todos lados</label>
+        <label><input type="radio" name="q5" value="3"> Misma contraseña en todos lados</label>
         <label><input type="radio" name="q5" value="4"> Contraseña = \"admin\"</label>
       </div>
     </div>
@@ -179,7 +180,7 @@
     <div class="question" data-correct="3">
       <h3>6. ¿Qué indica el candado (HTTPS) en la barra de direcciones?</h3>
       <div class="options">
-        <label><input type="radio" name="q6" value="1"> Es un sitio 100% confiable sin estafas</label>
+        <label><input type="radio" name="q6" value="1"> Es un sitio 100% confiable y sin estafas</label>
         <label><input type="radio" name="q6" value="2"> No sirve para nada</label>
         <label><input type="radio" name="q6" value="3"> La conexión está encriptada y es más segura</label>
         <label><input type="radio" name="q6" value="4"> El sitio está en mantenimiento</label>
@@ -209,9 +210,9 @@
     <div class="question" data-correct="3">
       <h3>9. ¿Qué significa 'Ingeniería Social'?</h3>
       <div class="options">
-        <label><input type="radio" name="q9" value="1"> La creación de robots inteligentes</label>
+        <label><input type="radio" name="q9" value="1"> Creación de robots inteligentes</label>
         <label><input type="radio" name="q9" value="2"> Enseñar a niños programación avanzada</label>
-        <label><input type="radio" name="q9" value="3"> Manipular a las personas para obtener info confidencial</label>
+        <label><input type="radio" name="q9" value="3"> Manipular a las personas para info confidencial</label>
         <label><input type="radio" name="q9" value="4"> Subir fotos a redes sociales</label>
       </div>
     </div>
@@ -221,7 +222,7 @@
       <div class="options">
         <label><input type="radio" name="q10" value="1"> Cambiar la contraseña periódicamente y no compartirla</label>
         <label><input type="radio" name="q10" value="2"> Dejar la misma por años</label>
-        <label><input type="radio" name="q10" value="3"> Apuntarla en un post-it pegado en la pantalla</label>
+        <label><input type="radio" name="q10" value="3"> Escribirla en un post-it en la pantalla</label>
         <label><input type="radio" name="q10" value="4"> Usar '12345' por ser fácil</label>
       </div>
     </div>
@@ -249,7 +250,7 @@
 
   verifyBtn.addEventListener('click', function() {
     attempts++;
-    currentScore = 0; // Recalcularemos la puntuación
+    currentScore = 0;
 
     const questions = quiz.querySelectorAll('.question');
     questions.forEach(q => {
@@ -264,12 +265,10 @@
       });
 
       if (selectedOption) {
-        // El usuario seleccionó algo
         if (selectedOption.value === correctValue) {
-          currentScore += 10; // Correcto
+          currentScore += 10; 
         } else {
-          // Incorrecto => removemos la opción del DOM
-          selectedOption.parentNode.remove();
+          selectedOption.parentNode.remove(); 
         }
       }
     });
@@ -277,7 +276,6 @@
     scoreSpan.textContent = currentScore;
 
     if (attempts < maxAttempts) {
-      // Aún quedan intentos
       const left = maxAttempts - attempts;
       attemptsLeft.textContent = left.toString();
 
@@ -293,7 +291,7 @@
       }
 
     } else {
-      // Tercer intento => fin
+      // Último intento
       verifyBtn.disabled = true;
       verifyBtn.style.opacity = '0.5';
       attemptsLeft.textContent = '0';
@@ -314,4 +312,3 @@
 
 </body>
 </html>
-
