@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Cuestionario CyberKids COntraseñas y tipos de malwares</title>
+  <title>Cuestionario CyberKids - Estilo Pastel Infantil con Imagen</title>
   <style>
     /* ======= Estilos Generales ======= */
     body {
@@ -69,8 +69,8 @@
 
     /* ======= Alineación para Pregunta con Imagen ======= */
     .question-with-image {
-      display: flex;            /* Flex para alinear texto e imagen */
-      flex-wrap: wrap;          /* Permite que baje a otra fila si la pantalla es pequeña */
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
     }
@@ -86,7 +86,7 @@
     }
 
     .right-part img {
-      max-width: 100%;
+      max-width: 180px;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
@@ -148,8 +148,7 @@
   </p>
 
   <div id="quiz">
-
-    <!-- PRIMERA PREGUNTA CON IMAGEN DEL PICO DE MINECRAFT -->
+    <!-- PRIMERA PREGUNTA CON TU IMAGEN RENOMBRADA -->
     <div class="question question-with-image" data-correct="3">
       <div class="left-part">
         <h3>1. ¿Cuál de estas contraseñas es más segura?</h3>
@@ -160,12 +159,10 @@
           <label><input type="radio" name="q1" value="4"> qwerty</label>
         </div>
       </div>
-
       <div class="right-part">
-        <!-- Imagen de un pico de Minecraft (URL referencial) -->
         <img 
-          src="https://upload.wikimedia.org/wikipedia/en/c/c8/Minecraft_Pickaxe_diamond.png"
-          alt="Pico de Minecraft"
+          src="minecraft_kids_logo.png" 
+          alt="Minecraft Security Logo"
         />
       </div>
     </div>
@@ -347,4 +344,5 @@
 
 </body>
 </html>
+
 
