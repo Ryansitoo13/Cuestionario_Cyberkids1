@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Cuestionario CyberKids Contraseñas seguras y tipos de amenazas</title>
+  <title>Cuestionario CyberKids</title>
   <style>
     /* ======= Estilos Generales ======= */
     body {
@@ -26,7 +26,7 @@
     h1 {
       margin-bottom: 10px;
       font-size: 26px;
-      color: #F57C00; 
+      color: #F57C00; /* Naranja */
       text-align: center;
       text-shadow: 1px 1px 2px #fff;
     }
@@ -36,9 +36,9 @@
       color: #333;
     }
 
-    /* ======= Estilos de las Preguntas ======= */
+    /* ======= Sección Preguntas ======= */
     .question {
-      background-color: #FFF9C4; 
+      background-color: #FFF9C4; /* Amarillo pastel */
       border: 3px dashed #FFB74D; 
       margin-bottom: 20px;
       padding: 15px;
@@ -67,7 +67,7 @@
       margin-right: 8px;
     }
 
-    /* ======= Alineación para Pregunta con Imagen ======= */
+    /* ======= Pregunta con Imagen (1era Pregunta) ======= */
     .question-with-image {
       display: flex;
       flex-wrap: wrap;
@@ -94,7 +94,7 @@
 
     /* ======= Botón Verificar (Azul -> Verde) ======= */
     #verify-btn {
-      background-color: #3498db; /* Azul inicial */
+      background-color: #3498db; /* Azul */
       border: none;
       color: #fff;
       padding: 12px 25px;
@@ -140,14 +140,15 @@
 <body>
 
 <div class="container">
-  <h1>Cuestionario Contraseñas Seguras y Tipos de amenazas</h1>
+  <h1>Cuestionario CyberKids</h1>
   <p>
     ¡Bienvenido a este quiz colorido! Tienes <span id="attempts-text">3</span> intentos para responder correctamente las
     10 preguntas. Cada acierto vale 10 puntos. ¡Diviértete aprendiendo!
   </p>
 
   <div id="quiz">
-    <!-- PRIMERA PREGUNTA CON IMAGEN (opcional) -->
+
+    <!-- PRIMERA PREGUNTA CON IMAGEN -->
     <div class="question question-with-image" data-correct="3">
       <div class="left-part">
         <h3>1. ¿Cuál de estas contraseñas es más segura?</h3>
@@ -159,8 +160,11 @@
         </div>
       </div>
       <div class="right-part">
-        <!-- Ajusta la ruta de la imagen si la usas -->
-        <!-- <img src="minecraft_kids_logo.png" alt="Minecraft Security Logo" /> -->
+        <!-- Ajusta el nombre si difiere. Debe existir un archivo 'minecraft_kids_logo.png' en la misma carpeta. -->
+        <img 
+          src="minecraft_kids_logo.png" 
+          alt="Minecraft Security Logo"
+        />
       </div>
     </div>
     <!-- FIN PRIMERA PREGUNTA -->
@@ -201,7 +205,7 @@
         <label><input type="radio" name="q5" value="1"> Usar letras, números y símbolos</label>
         <label><input type="radio" name="q5" value="2"> Nombre de mascota y fecha de nacimiento</label>
         <label><input type="radio" name="q5" value="3"> Misma contraseña en todos lados</label>
-        <label><input type="radio" name="q5" value="4"> Contraseña = \"admin\"</label>
+        <label><input type="radio" name="q5" value="4"> Contraseña = 'admin'</label>
       </div>
     </div>
 
