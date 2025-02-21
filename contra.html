@@ -2,12 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Cuestionario CyberKids - Estilo Pastel Infantil</title>
+  <title>Cuestionario CyberKids - Estilo Pastel Infantil con Imagen</title>
   <style>
     /* ======= Estilos Generales ======= */
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      /* Cambiamos el fondo a un degradado con tonos pastel */
       background: linear-gradient(135deg, #A0E7E5 0%, #FFCFDF 100%);
       margin: 0;
       padding: 0;
@@ -32,13 +31,12 @@
       text-shadow: 1px 1px 2px #fff;
     }
 
-    /* ======= Párrafos y mensajes ======= */
     p {
       font-size: 18px;
       color: #333;
     }
 
-    /* ======= Estilos para las preguntas ======= */
+    /* ======= Estilos de las Preguntas ======= */
     .question {
       background-color: #FFF9C4; /* Amarillo pastel claro */
       border: 3px dashed #FFB74D; /* Borde naranja pastel */
@@ -50,7 +48,7 @@
     .question h3 {
       margin-bottom: 10px;
       font-size: 20px;
-      color: #388E3C; /* Verde para destacar el título */
+      color: #388E3C; /* Verde para destacar */
     }
 
     .options {
@@ -69,6 +67,31 @@
       margin-right: 8px;
     }
 
+    /* ======= Alineación para Pregunta con Imagen ======= */
+    .question-with-image {
+      display: flex;            /* Flex para alinear texto e imagen */
+      flex-wrap: wrap;          /* Permite que baje a otra fila si la pantalla es pequeña */
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .left-part {
+      flex: 1 1 300px;
+      margin-right: 10px;
+    }
+
+    .right-part {
+      flex: 0 0 180px; /* Espacio fijo para la imagen */
+      text-align: center;
+    }
+
+    .right-part img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
     /* ======= Botón Verificar ======= */
     #verify-btn {
       background-color: #F06292; /* Rosa fuerte pastel */
@@ -84,7 +107,7 @@
     }
 
     #verify-btn:hover {
-      background-color: #EC407A; 
+      background-color: #EC407A;
     }
 
     /* ======= Puntuación y Mensajes ======= */
@@ -110,7 +133,6 @@
       font-weight: bold;
     }
 
-    /* ======= Final ======= */
     .hidden {
       display: none;
     }
@@ -126,16 +148,28 @@
   </p>
 
   <div id="quiz">
-    <!-- Cada pregunta lleva data-correct con la opción correcta (1,2,3,4) -->
-    <div class="question" data-correct="3">
-      <h3>1. ¿Cuál de estas contraseñas es más segura?</h3>
-      <div class="options">
-        <label><input type="radio" name="q1" value="1"> 123456</label>
-        <label><input type="radio" name="q1" value="2"> password</label>
-        <label><input type="radio" name="q1" value="3"> A9!Tp_Qz3%</label>
-        <label><input type="radio" name="q1" value="4"> qwerty</label>
+
+    <!-- PRIMERA PREGUNTA CON IMAGEN DEL PICO DE MINECRAFT -->
+    <div class="question question-with-image" data-correct="3">
+      <div class="left-part">
+        <h3>1. ¿Cuál de estas contraseñas es más segura?</h3>
+        <div class="options">
+          <label><input type="radio" name="q1" value="1"> 123456</label>
+          <label><input type="radio" name="q1" value="2"> password</label>
+          <label><input type="radio" name="q1" value="3"> A9!Tp_Qz3%</label>
+          <label><input type="radio" name="q1" value="4"> qwerty</label>
+        </div>
+      </div>
+
+      <div class="right-part">
+        <!-- Imagen de un pico de Minecraft (URL referencial) -->
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/en/c/c8/Minecraft_Pickaxe_diamond.png"
+          alt="Pico de Minecraft"
+        />
       </div>
     </div>
+    <!-- FIN PRIMERA PREGUNTA -->
 
     <div class="question" data-correct="4">
       <h3>2. ¿Cuál de estos NO es un tipo de malware?</h3>
@@ -266,9 +300,10 @@
 
       if (selectedOption) {
         if (selectedOption.value === correctValue) {
-          currentScore += 10; 
+          currentScore += 10;
         } else {
-          selectedOption.parentNode.remove(); 
+          // Respuesta incorrecta => se elimina la opción
+          selectedOption.parentNode.remove();
         }
       }
     });
@@ -312,3 +347,4 @@
 
 </body>
 </html>
+
