@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Cuestionario CyberKids</title>
+  <title>Cuestionario CyberKids - Botón Azul a Verde</title>
   <style>
     /* ======= Estilos Generales ======= */
     body {
@@ -26,7 +26,7 @@
     h1 {
       margin-bottom: 10px;
       font-size: 26px;
-      color: #F57C00; /* Naranja infantil */
+      color: #F57C00; 
       text-align: center;
       text-shadow: 1px 1px 2px #fff;
     }
@@ -38,8 +38,8 @@
 
     /* ======= Estilos de las Preguntas ======= */
     .question {
-      background-color: #FFF9C4; /* Amarillo pastel claro */
-      border: 3px dashed #FFB74D; /* Borde naranja pastel */
+      background-color: #FFF9C4; 
+      border: 3px dashed #FFB74D; 
       margin-bottom: 20px;
       padding: 15px;
       border-radius: 10px;
@@ -48,7 +48,7 @@
     .question h3 {
       margin-bottom: 10px;
       font-size: 20px;
-      color: #388E3C; /* Verde para destacar */
+      color: #388E3C; 
     }
 
     .options {
@@ -81,7 +81,7 @@
     }
 
     .right-part {
-      flex: 0 0 180px; /* Espacio fijo para la imagen */
+      flex: 0 0 180px; 
       text-align: center;
     }
 
@@ -92,9 +92,9 @@
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
 
-    /* ======= Botón Verificar ======= */
+    /* ======= Botón Verificar (Azul -> Verde) ======= */
     #verify-btn {
-      background-color: #0000FF; /* Azul*/
+      background-color: #3498db; /* Azul inicial */
       border: none;
       color: #fff;
       padding: 12px 25px;
@@ -105,9 +105,8 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-
     #verify-btn:hover {
-      background-color: #EC407A;
+      background-color: #2ecc71; /* Verde en hover */
     }
 
     /* ======= Puntuación y Mensajes ======= */
@@ -148,7 +147,7 @@
   </p>
 
   <div id="quiz">
-    <!-- PRIMERA PREGUNTA CON TU IMAGEN RENOMBRADA -->
+    <!-- PRIMERA PREGUNTA CON IMAGEN (opcional) -->
     <div class="question question-with-image" data-correct="3">
       <div class="left-part">
         <h3>1. ¿Cuál de estas contraseñas es más segura?</h3>
@@ -160,10 +159,8 @@
         </div>
       </div>
       <div class="right-part">
-        <img 
-          src="minecraft_kids_logo.png" 
-          alt="Minecraft Security Logo"
-        />
+        <!-- Ajusta la ruta de la imagen si la usas -->
+        <!-- <img src="minecraft_kids_logo.png" alt="Minecraft Security Logo" /> -->
       </div>
     </div>
     <!-- FIN PRIMERA PREGUNTA -->
@@ -299,8 +296,7 @@
         if (selectedOption.value === correctValue) {
           currentScore += 10;
         } else {
-          // Respuesta incorrecta => se elimina la opción
-          selectedOption.parentNode.remove();
+          selectedOption.parentNode.remove(); 
         }
       }
     });
@@ -344,5 +340,4 @@
 
 </body>
 </html>
-
 
